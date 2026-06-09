@@ -1,0 +1,49 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Django Todo</title>
+    <link rel="stylesheet" href="{% static 'todos/styles.css' %}">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="todo-panel">
+            <header class="header">
+                <p class="eyebrow">Django Todo</p>
+                <h1>Today&apos;s tasks</h1>
+                <p class="meta">{{ remaining_count }} task{{ remaining_count|pluralize }} remaining</p>
+            </header>
+
+            <form class="add-form" method="post">
+                {% csrf_token %}
+                {{ form.title }}
+                <button type="submit">Add</button>
+            </form>
+
+            <ul class="todo-list">
+                {% for todo in todos %}
+                    <li class="todo-item{% if todo.completed %} is-complete{% endif %}">
+                        <form method="post" action="{% url 'todos:toggle' todo.id %}">
+                            {% csrf_token %}
+                            <button class="check-button" type="submit" aria-label="Toggle {{ todo.title }}">
+                                {% if todo.completed %}✓{% endif %}
+                            </button>
+                        </form>
+
+                        <span class="todo-title">{{ todo.title }}</span>
+
+                        <form method="post" action="{% url 'todos:delete' todo.id %}">
+                            {% csrf_token %}
+                            <button class="delete-button" type="submit" aria-label="Delete {{ todo.title }}">Delete</button>
+                        </form>
+                    </li>
+                {% empty %}
+                    <li class="empty-state">No tasks yet. Add one above.</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

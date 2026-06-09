@@ -1,0 +1,31 @@
+Watching for file changes with StatReloader
+[04/Jun/2026 20:20:47] "GET / HTTP/1.1" 200 1120
+[04/Jun/2026 20:20:47] "GET /static/todos/styles.css HTTP/1.1" 200 2838
+[04/Jun/2026 20:21:04] "POST / HTTP/1.1" 302 0
+[04/Jun/2026 20:21:04] "GET / HTTP/1.1" 200 1999
+[04/Jun/2026 20:21:05] "POST /toggle/1/ HTTP/1.1" 302 0
+[04/Jun/2026 20:21:05] "GET / HTTP/1.1" 200 2015
+[04/Jun/2026 20:21:05] "POST /delete/1/ HTTP/1.1" 302 0
+[04/Jun/2026 20:21:05] "GET / HTTP/1.1" 200 1120
+[04/Jun/2026 20:26:59] "GET / HTTP/1.1" 200 1120
+[04/Jun/2026 20:26:59] "GET /static/todos/styles.css HTTP/1.1" 304 0
+[04/Jun/2026 20:27:07] "POST / HTTP/1.1" 302 0
+[04/Jun/2026 20:27:07] "GET / HTTP/1.1" 200 1948
+[04/Jun/2026 20:27:09] "POST /toggle/2/ HTTP/1.1" 302 0
+[04/Jun/2026 20:27:09] "GET / HTTP/1.1" 200 1964
+[04/Jun/2026 20:27:10] "POST /toggle/2/ HTTP/1.1" 302 0
+[04/Jun/2026 20:27:10] "GET / HTTP/1.1" 200 1948
+[04/Jun/2026 20:27:11] "POST /toggle/2/ HTTP/1.1" 302 0
+[04/Jun/2026 20:27:11] "GET / HTTP/1.1" 200 1964
+[04/Jun/2026 20:27:11] "POST /toggle/2/ HTTP/1.1" 302 0
+[04/Jun/2026 20:27:11] "GET / HTTP/1.1" 200 1948
+[04/Jun/2026 20:27:12] "POST /toggle/2/ HTTP/1.1" 302 0
+[04/Jun/2026 20:27:12] "GET / HTTP/1.1" 200 1964
+[04/Jun/2026 20:27:13] "POST /toggle/2/ HTTP/1.1" 302 0
+[04/Jun/2026 20:27:13] "GET / HTTP/1.1" 200 1948
+[04/Jun/2026 20:27:14] "POST /toggle/2/ HTTP/1.1" 302 0
+[04/Jun/2026 20:27:14] "GET / HTTP/1.1" 200 1964
+[04/Jun/2026 20:30:34] "GET / HTTP/1.1" 200 1964
+[04/Jun/2026 20:30:35] "GET /static/todos/styles.css HTTP/1.1" 200 2838
+Not Found: /favicon.ico
+[04/Jun/2026 20:30:35] "GET /favicon.ico HTTP/1.1" 404 3010
