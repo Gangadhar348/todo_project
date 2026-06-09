@@ -9,6 +9,8 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "djangotodo-mvcizbpbc-gangadhar348s-projects.vercel.app",
+    "djangotodo-git-main-gangadhar348s-projects.vercel.app",
+    "djangotodo-alpha.vercel.app",
 ]
 
 INSTALLED_APPS = [
