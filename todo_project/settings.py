@@ -1,14 +1,18 @@
 from pathlib import Path
+import os
 import dj_database_url
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "dev-only-todo-project-secret-key"
-DEBUG = True
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'dev-only-todo-project-secret-key')
+
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
+     ".vercel.app",
     "djangotodo-mvcizbpbc-gangadhar348s-projects.vercel.app",
     "djangotodo-git-main-gangadhar348s-projects.vercel.app",
     "djangotodo-alpha.vercel.app",
@@ -55,8 +59,10 @@ WSGI_APPLICATION = "todo_project.wsgi.application"
 
 
 DATABASES = {
-       'default': dj_database_url.parse(os.environ['DATABASE_URL'])
-   }
+    'default': dj_database_url.parse(
+        os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite3')
+    )
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
